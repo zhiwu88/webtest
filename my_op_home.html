@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>我的运维主页</title>
+<script>
+	function divAppear(x) {
+		x.style.zIndex = "99";
+	}
+	function divDisAppear(x) {
+		x.style.zIndex = "-1";
+	}
+
+	function liAppear(x) {
+		x.style.paddingLeft = "3%";
+		x.style.paddingRight = "3%";
+		var z = document.getElementsByTagName("LI");
+		for (var i = 0; i < z.length; i++) {
+			var zi = z[i].className;
+			document.getElementsByName(zi)[0].style.zIndex = "0";
+		}
+		var y = x.className;
+		document.getElementsByName(y)[0].style.zIndex = "1";
+	}
+	function liDisAppear(x) {
+		x.style.paddingLeft = "1%";
+		x.style.paddingRight = "1%";
+	}
+</script>
+<style type="text/css">
+html, body, h1, h2, h3, p, ol, ul, li, a {
+	padding: 0;
+	border: 0;
+	margin: 0;
+}
+
+.div_bottom {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 30%;
+	z-index: -1;
+	background: rgba(150, 150, 240, 0.2);
+}
+
+.div_center {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 99%;
+	z-index: 0;
+}
+
+iframe {
+	height: 100%;
+	width: 100%;
+	border-style: none;
+}
+
+.div_bottom ul {
+	vertical-align: middle;
+	text-align: center;
+	padding: 5% 0;
+}
+
+.div_bottom li {
+	display: inline;
+	padding: 5% 1%;
+	font-weight: bold;
+	background: rgba(150, 150, 240, 0.6);
+}
+</style>
+</head>
+<body>
+	<div class="div_bottom" onmousemove="divAppear(this)"
+		onmouseout="divDisAppear(this)">
+		<ul>
+			<li class="baidu" onmousemove="liAppear(this)"
+				onmouseout="liDisAppear(this)">百度搜索</li>
+			<li class="fanyi" onmousemove="liAppear(this)"
+				onmouseout="liDisAppear(this)">百度翻译</li>
+			<li class="opnav" onmousemove="liAppear(this)"
+				onmouseout="liDisAppear(this)">OP导航</li>
+			<li class="zichan" onmousemove="liAppear(this)"
+				onmouseout="liDisAppear(this)">资产系统</li>
+			<li class="zabbix" onmousemove="liAppear(this)"
+				onmouseout="liDisAppear(this)">ZABBIX</li>
+			<li class="gongdan" onmousemove="liAppear(this)"
+				onmouseout="liDisAppear(this)">工单系统</li>
+<!--
+			<li class="appadm" onmousemove="liAppear(this)"
+				onmouseout="liDisAppear(this)">应用管理</li>
+			<li class="opksso" onmousemove="liAppear(this)"
+				onmouseout="liDisAppear(this)">ksso首页</li>
+-->
+		</ul>
+	</div>
+
+	<div class="div_center" name="baidu">
+		<iframe src="http://www.baidu.com/"></iframe>
+	</div>
+	<div class="div_center" name="fanyi">
+		<iframe src="http://fanyi.baidu.com/#auto/zh/"></iframe>
+	</div>
+	<div class="div_center" name="opnav">
+		<iframe src="http://qq.com/"></iframe>
+	</div>
+	<div class="div_center" name="zichan">
+		<iframe src="https://baidu.com/"></iframe>
+	</div>
+	<div class="div_center" name="zabbix">
+		<iframe src="http://baidu.com/"></iframe>
+	</div>
+	<div class="div_center" name="gongdan">
+		<iframe src="baidu.com/"></iframe>
+	</div>
+<!--
+	<div class="div_center" name="appadm">
+		<iframe src="http://webserver.kisops.com:9000/"></iframe>
+	</div>
+	<div class="div_center" name="opksso">
+		<iframe src="https://ksso.kisops.com/"></iframe>
+	</div>
+-->
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
